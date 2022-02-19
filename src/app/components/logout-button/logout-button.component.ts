@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
+import { environment as env } from '../../../environments/environment';
 
 @Component({
   selector: 'app-logout-button',
@@ -18,7 +19,7 @@ export class LogoutButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   logout(): void {
-    this.auth.logout({ returnTo: this.doc.location.origin });
+    this.auth.logout({ returnTo: env.auth.redirectUri });
     this.router.navigate(['']);
   }
 }
