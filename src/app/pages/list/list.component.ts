@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { AddItemComponent } from 'src/app/dialogs/add-item/add-item.component';
 import { GroupService } from 'src/app/service/group.service';
-import { JwtauthService } from 'src/app/service/jwtauth.service';
 import { LoaderService } from 'src/app/service/loader.service';
 import { TobuyService } from 'src/app/service/tobuy.service';
 
