@@ -1,0 +1,55 @@
+:host ::ng-deep {
+  .logo {
+    background-image: url('https://raw.githubusercontent.com/raulmu/assets/main/logo-lc.png');
+    width: 49px;
+    height: 50px;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 250px;
+}
+
+main {
+  padding: 10px;
+}
+
+/* for sidenav to take a whole page */
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 64px - 123px);
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100% - 64px - 123px);
+}
+
+.fake-toolbar {
+  background-color: #673ab7;
+}
+
+@media (max-width: 599px) {
+  .loading-content, .content {
+    min-height: calc(100% - 56px - 123px);
+  }
+}

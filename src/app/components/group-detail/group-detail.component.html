@@ -1,0 +1,59 @@
+<mat-card>
+  <mat-card-subtitle>{{ title }}</mat-card-subtitle>
+  <mat-card-title>{{ group.name }}</mat-card-title>
+  <mat-card-content>
+    <mat-list role="list">
+      <mat-list-item role="listitem"
+        >criado por {{ group.owner.name }}</mat-list-item
+      >
+      <mat-list-item role="listitem"
+        >email: {{ group.owner.email }}</mat-list-item
+      >
+      <mat-list-item role="listitem"
+        >quantidade de membros:
+        {{ group.members_aggregate.aggregate.count + 1 }}</mat-list-item
+      >
+    </mat-list>
+    <mat-list
+      role="list"
+      *ngIf="
+        (user.is_group_granted || user.id === group.owner_id) && group.members
+      "
+    >
+      <mat-list-item
+        role="listitem"
+        class="cursor-pointer"
+        (click)="showMembers = !showMembers"
+      >
+        <span class="mat-body-strong">Gerenciar Membros</span>
+        <button mat-icon-button>
+          <mat-icon class="mat-24">{{
+            showMembers ? 'expand_less' : 'expand_more'
+          }}</mat-icon>
+        </button>
+      </mat-list-item>
+      <ng-container *ngIf="showMembers">
+        <mat-list-item *ngFor="let member of group.members">
+          <mat-checkbox
+            [checked]="member.is_group_granted"
+            
+            >{{ member.email }}</mat-checkbox
+          >
+          </mat-list-item
+        >
+      </ng-container>
+    </mat-list>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions align="end">
+    <button
+      *ngIf="action"
+      mat-button
+      [disabled]="action.disabled"
+      color="primary"
+      (click)="primaryActionClick()"
+    >
+      {{ action.caption }}
+    </button>
+  </mat-card-actions>
+</mat-card>

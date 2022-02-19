@@ -1,0 +1,16 @@
+<app-loading *ngIf="(loaderService.isLoading | async) "></app-loading>
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <app-main-nav></app-main-nav>
+  </mat-menu>
+  <span>Lembretes de Compras</span>
+  <span class="default-spacer"></span>
+  <app-authentication-button></app-authentication-button>
+</mat-toolbar>
