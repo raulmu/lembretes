@@ -26,6 +26,10 @@ jobs:
     - name: Build
       run: npm run build:prod
 
+    - name: Copy index 404
+      if: success()
+      run: cp dist/lembretes/index.html dist/lembretes/404.html
+
     - name: Deploy
       if: success()
       uses: peaceiris/actions-gh-pages@v3
