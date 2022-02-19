@@ -4,7 +4,12 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+html {
+  overflow: hidden;
+}
+
 body {
+  overflow: auto;
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   background-color: #eee;
