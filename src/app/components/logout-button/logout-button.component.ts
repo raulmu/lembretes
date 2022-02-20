@@ -19,6 +19,7 @@ export class LogoutButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   logout(): void {
+    console.log('env.auth.redirectUri', env.auth.redirectUri);
     this.auth.logout({ returnTo: env.auth.redirectUri });
     this.router.navigate(['']);
   }

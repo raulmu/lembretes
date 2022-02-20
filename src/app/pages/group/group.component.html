@@ -1,8 +1,8 @@
 <div *ngIf="user">
   <mat-list role="list">
-    <mat-list-item role="listitem">
+    <mat-list-item class="group-info-item" role="listitem">
       <mat-icon mat-list-icon>group</mat-icon>
-      <div mat-line *ngIf="!user.own_group && !user.on_group">
+      <div  mat-line *ngIf="!user.own_group && !user.on_group">
         Você pode criar ou participar de um grupo para compartilhar lembretes de
         compras
       </div>

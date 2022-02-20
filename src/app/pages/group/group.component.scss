@@ -23,3 +23,19 @@ mat-form-field {
   display: flex;
   justify-content: flex-end;
 }
+
+@media (min-width: 740px)
+{
+  .facet_sidebar
+   {
+    display: none;
+   }
+}
+
+.group-info-item {
+  margin-bottom: 10px;
+  display: flex;
+}
+
+
+
