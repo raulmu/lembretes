@@ -2,6 +2,7 @@ import { DOCUMENT } from '@angular/common';
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
+import { environment as env } from '../../../environments/environment';
 
 @Component({
   selector: 'app-main-nav',
@@ -21,7 +22,8 @@ export class MainNavComponent implements OnInit {
   }
 
   logout(): void {
-    this.auth.logout({ localOnly: false, returnTo: this.doc.location.origin });
+    
+    this.auth.logout({ localOnly: false, returnTo: env.auth.redirectUri });
     //this.router.navigate(['/', route]);
   }
 
