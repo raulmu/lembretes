@@ -17,3 +17,5 @@ export class JwtauthService {
     });
   }
 }
+
+// TODO https://www.positronx.io/full-angular-firebase-authentication-system/
