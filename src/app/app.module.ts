@@ -3,7 +3,7 @@ import { registerLocaleData } from '@angular/common';
 import ptBr from '@angular/common/locales/pt';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
+// import { AuthHttpInterceptor, AuthModule } from '@auth0/auth0-angular';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
@@ -44,7 +44,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTabsModule } from '@angular/material/tabs';
 import { TobuyListComponent } from './components/tobuy-list/tobuy-list.component';
 import { GroupComponent } from './pages/group/group.component';
-import { JwtauthService } from './service/jwtauth.service';
+// import { JwtauthService } from './service/jwtauth.service';
 import { hasuraConfig } from '../../hasura_config';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { InterceptorService } from './service/interceptor.service';
@@ -73,7 +73,7 @@ registerLocaleData(ptBr);
     MatProgressBarModule,
     MatSnackBarModule,
     FormsModule,
-    AuthModule.forRoot({
+/*    AuthModule.forRoot({
       // useRefreshTokens: true,
       cacheLocation: 'localstorage',
       // scope: 'offline_access',
@@ -106,7 +106,7 @@ registerLocaleData(ptBr);
           }          
         ]
       },
-    }),
+    }),*/
   ],
   declarations: [
     AppComponent,
@@ -132,31 +132,13 @@ registerLocaleData(ptBr);
     {
       provide: APOLLO_OPTIONS,
       useFactory(httpLink: HttpLink) {
+        /*
         if(this.auth) {
           console.log('this.auth.manualRefreshToken()');
           this.auth.manualRefreshToken();
         }
+        */
         
-        // const tokenOptions = {
-        //   audience: 'https://hasura.io/jwt/claims',
-        //   //scope: 'read:accounts',
-        // };
-
-        // let token = localStorage.getItem("access_token");
-
-        // token = this.auth ? await this.auth.getAccessTokenSilently(tokenOptions).subscribe() : token;
-
-        // Create an http link:
-        /*const auth = setContext((operation, context) => ({
-          headers: {
-            Accept: 'charset=utf-8',
-            Authorization: "Bearer " + (localStorage.getItem("access_token") || null),
-            'x-hasura-group-id': "2"
-          }
-        }));*/
-        // const http = ApolloLink.from([auth, httpLink.create({
-        //   uri: 'https://pleased-parakeet-80.hasura.app/v1/graphql',
-        // })]);
         const http = httpLink.create({
           uri: `https://${hasuraConfig.api}`,
         });
@@ -175,7 +157,6 @@ registerLocaleData(ptBr);
           },
         });
 
-        // console.log("Bearer " + localStorage.getItem("access_token"));
         // using the ability to split links, you can send data to each link
         // depending on what kind of operation is being sent
         const link = split(
@@ -202,7 +183,7 @@ registerLocaleData(ptBr);
       },
       deps: [HttpLink],
     },
-    { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
+    // { provide: HTTP_INTERCEPTORS, useClass: AuthHttpInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true }
   ],
   bootstrap: [AppComponent],

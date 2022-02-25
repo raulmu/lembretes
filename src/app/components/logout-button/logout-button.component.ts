@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { AuthService } from '@auth0/auth0-angular';
+// import { AuthService } from '@auth0/auth0-angular';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
 import { environment as env } from '../../../environments/environment';
@@ -11,7 +11,7 @@ import { environment as env } from '../../../environments/environment';
 })
 export class LogoutButtonComponent implements OnInit {
   constructor(
-    public auth: AuthService,
+    // public auth: AuthService,
     @Inject(DOCUMENT) private doc: Document,
     private router: Router
   ) {}
@@ -19,8 +19,9 @@ export class LogoutButtonComponent implements OnInit {
   ngOnInit(): void {}
 
   logout(): void {
+    console.log('logout button');
     console.log('env.auth.redirectUri', env.auth.redirectUri);
-    this.auth.logout({ returnTo: env.auth.redirectUri });
+    // this.auth.logout({ returnTo: env.auth.redirectUri });
     this.router.navigate(['']);
   }
 }

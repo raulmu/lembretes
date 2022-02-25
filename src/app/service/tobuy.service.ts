@@ -1,7 +1,6 @@
 
 import { Injectable } from '@angular/core';
 import { FetchResult } from '@apollo/client/core';
-import { AuthService } from '@auth0/auth0-angular';
 import { Apollo, gql, QueryRef } from 'apollo-angular';
 import { EmptyObject } from 'apollo-angular/types';
 import { Observable } from 'rxjs';
@@ -88,7 +87,9 @@ export class TobuyService {
   }`;
   // TODO https://hasura.io/learn/graphql/angular-apollo
   // TODO https://auth0.com/blog/building-a-collaborative-todo-app-with-realtime-graphql-using-hasura/
-  constructor(private apollo: Apollo, private auth: AuthService) {}
+  constructor(
+    private apollo: Apollo
+    ) {}
 
   watchUserTobuys(): QueryRef<unknown, EmptyObject> {
     return this.apollo.watchQuery({

@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AddItemComponent } from 'src/app/dialogs/add-item/add-item.component';
 import { GroupService } from 'src/app/service/group.service';
 import { LoaderService } from 'src/app/service/loader.service';
-import { TobuyService } from 'src/app/service/tobuy.service';
+import { TobuyService } from '../../service/tobuy.service';
 
 @Component({
   selector: 'app-list',

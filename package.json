@@ -26,7 +26,6 @@
     "@angular/platform-browser-dynamic": "~13.2.2",
     "@angular/router": "~13.2.2",
     "@apollo/client": "^3.5.8",
-    "@auth0/auth0-angular": "^1.8.2",
     "apollo-angular": "^2.6.0",
     "apollo-link-ws": "^1.0.20",
     "graphql": "^15.8.0",

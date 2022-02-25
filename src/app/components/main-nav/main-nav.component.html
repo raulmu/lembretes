@@ -2,35 +2,51 @@
   <mat-icon>home</mat-icon>
   <span>Início</span>
 </button>
-<button
+<!-- button
   mat-menu-item
   (click)="navigate('list')"
   [disabled]="(auth.isAuthenticated$ | async) === false"
+-->
+<button
+  mat-menu-item
+  (click)="navigate('list')"
 >
   <mat-icon>view_list</mat-icon>
   <span>Lembretes</span>
 </button>
-<button
+<!-- button
   mat-menu-item
   (click)="navigate('group')"
   [disabled]="(auth.isAuthenticated$ | async) === false"
+-->
+<button
+  mat-menu-item
+  (click)="navigate('group')"
 >
   <mat-icon>group</mat-icon>
   <span>Grupo</span>
 </button>
-<button
+<!--button
   mat-menu-item
   (click)="navigate('profile')"
   [disabled]="(auth.isAuthenticated$ | async) === false"
+-->
+<button
+  mat-menu-item
+  (click)="navigate('profile')"
 >
   <mat-icon>person</mat-icon>
   <span>Perfil</span>
 </button>
 <mat-divider></mat-divider>
-<button
+<!-- button
   mat-menu-item
   (click)="logout()"
   [disabled]="(auth.isAuthenticated$ | async) === false"
+-->
+<button
+  mat-menu-item
+  (click)="logout()"
 >
   <mat-icon>logout</mat-icon>
   <span>Sair</span>

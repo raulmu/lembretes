@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { concatMap, tap, pluck } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { AuthService } from '@auth0/auth0-angular';
+// import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-profile',
@@ -13,7 +13,11 @@ export class ProfileComponent implements OnInit {
 
   metadataJson: string = null;
 
-  constructor(public auth: AuthService, private http: HttpClient) {}
+  user: any = {};
+
+  constructor(
+    // public auth: AuthService, 
+    private http: HttpClient) {}
 
   ngOnInit(): void {
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 
-import { AuthService } from "@auth0/auth0-angular";
+//import { AuthService } from "@auth0/auth0-angular";
 
 import { SnackBarService } from "./service/snack-bar.service";
 
@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   title = "Lembretes";
 
   constructor(
-    public auth: AuthService,
+    // public auth: AuthService,
     private matSnackBar: MatSnackBar,
     private snackBarService: SnackBarService
   ) {
@@ -32,12 +32,13 @@ export class AppComponent implements OnInit {
   }
 
   private async getToken() {
+    /*
     const tokenOptions = {
       audience: "https://hasura.io/jwt/claims",
       //scope: 'read:accounts',
     };
     this.auth.getAccessTokenSilently(tokenOptions).subscribe((token) => {
       localStorage.setItem("access_token", token);
-    });
+    });*/
   }
 }
